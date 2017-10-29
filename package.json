@@ -1,0 +1,27 @@
+{
+  "name": "iclr2018",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "autosuggest-highlight": "^3.1.1",
+    "lunr": "^2.1.4",
+    "material-ui": "^1.0.0-beta.18",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "react": "^16.0.0",
+    "react-autosuggest": "^9.3.2",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14",
+    "react-tap-event-plugin": "^3.0.2",
+    "reselect": "^3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && cp CNAME ./build/CNAME && surge -p ./build"
+  },
+  "devDependencies": {
+    "prop-types": "^15.6.0"
+  }
+}
