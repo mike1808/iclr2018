@@ -4,6 +4,7 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import LaunchIcon from 'material-ui-icons/Launch';
+import LinkIcon from 'material-ui-icons/Link';
 
 const styles = theme => ({
   root: {
@@ -14,17 +15,23 @@ const styles = theme => ({
     marginBottom: 32,
   },
   link: {
+    marginRight: 5,
+  },
+  pdf: {
     marginLeft: 5,
     textDecoration: 'none'
   },
 });
 
 
-const Article = ({ title, abstract, pdf, classes, tldr, keywords }) => (
-  <Paper className={classes.root} evalation={4}>
+const Article = ({ id, title, abstract, pdf, classes, tldr, keywords }) => (
+  <Paper className={classes.root} evalation={4} id={id}>
     <Typography type="headline" component="h3">
+      <a className={classes.link} href={`#${id}`}>
+        <LinkIcon />
+      </a>
       {title}
-      <a className={classes.link} href={`https://openreview.net${pdf}`} rel="noopener noreferrer" target="_blank">
+      <a className={classes.pdf} href={`https://openreview.net${pdf}`} rel="noopener noreferrer" target="_blank">
         <LaunchIcon /> PDF
       </a>
     </Typography>
@@ -42,6 +49,7 @@ const Article = ({ title, abstract, pdf, classes, tldr, keywords }) => (
 
 Article.propTypes = {
   classes: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   abstract: PropTypes.string.isRequired,
   tldr: PropTypes.string,

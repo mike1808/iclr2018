@@ -22,6 +22,7 @@ class List extends PureComponent {
               </Grid>
               <Grid item xs>
                 <Article
+                  id={paper.id}
                   title={paper.title}
                   abstract={paper.abstract}
                   pdf={paper.pdf}
