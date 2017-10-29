@@ -26,6 +26,7 @@ class List extends PureComponent {
                   abstract={paper.abstract}
                   pdf={paper.pdf}
                   tldr={paper.tldr}
+                  keywords={paper.keywords}
                 />
               </Grid>
             </Grid>

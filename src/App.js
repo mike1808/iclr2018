@@ -14,7 +14,6 @@ class App extends Component {
             <Typography type="display1" component="h1" gutterBottom>
               ICLR 2018 Conference Open Review Submissions
             </Typography>
-
             <List />
           </Grid>
         </Grid>

@@ -17,13 +17,10 @@ const styles = theme => ({
     marginLeft: 5,
     textDecoration: 'none'
   },
-  tldr: {
-    fontWeight: 800,
-  }
 });
 
 
-const Article = ({ title, abstract, pdf, classes, tldr }) => (
+const Article = ({ title, abstract, pdf, classes, tldr, keywords }) => (
   <Paper className={classes.root} evalation={4}>
     <Typography type="headline" component="h3">
       {title}
@@ -31,8 +28,11 @@ const Article = ({ title, abstract, pdf, classes, tldr }) => (
         <LaunchIcon /> PDF
       </a>
     </Typography>
-    <Typography type="body2" component="p" className={classes.tldr}>
-      TL;DR: {tldr}
+    <Typography type="body2" component="p">
+      <strong>TL;DR:</strong> {tldr}
+    </Typography>
+    <Typography type="body2" component="p">
+      <strong>Keywords:</strong> {keywords.join(', ')}
     </Typography>
     <Typography type="body1" component="p">
       {abstract}
@@ -46,6 +46,7 @@ Article.propTypes = {
   abstract: PropTypes.string.isRequired,
   tldr: PropTypes.string,
   pdf: PropTypes.string.isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default withStyles(styles)(Article);
